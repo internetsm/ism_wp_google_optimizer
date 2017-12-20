@@ -9,6 +9,8 @@ Author URI: #
 License: MIT
 */
 
+define('ISM_GOOGLE_OPTIMIZER_URL', plugin_dir_url(__FILE__));
+
 require_once __DIR__ . "/src/autoload.php";
 require_once __DIR__ . "/includes/ism-enqueue-functions.php";
 require_once __DIR__ . "/includes/ism-menu-page-functions.php";

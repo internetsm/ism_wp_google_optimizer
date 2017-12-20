@@ -3,6 +3,11 @@
 
 use IsmGoogleOptimizer\Helper\OptionHelper;
 
+add_action('admin_footer', function () {
+
+    wp_enqueue_style('ism-google-optimizer-admin', ISM_GOOGLE_OPTIMIZER_URL . '/assets/ism-google-optimizer.css');
+});
+
 add_action('wp_enqueue_scripts', function () {
 
     global $wp_styles;

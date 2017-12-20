@@ -17,7 +17,7 @@
             <tr>
                 <th scope="row"><label for="posts_per_page">Lista CSS</label></th>
                 <td>
-                    <table>
+                    <table class="scrollable-table">
                         <?php foreach ($ism_styles as $ism_style) : ?>
                             <tr>
                                 <td><input type="checkbox" name="add_styles[]"
