@@ -1,6 +1,16 @@
 <div class="wrap">
     <h1>Ism Google Optimizer</h1>
-    <p>Se non vengono mostrati stili, aprire questa <a href="<?php echo $generate_url; ?>">url</a></p>
+
+    <table class="form-table">
+        <tbody>
+        <tr>
+            <th scope="row"><label for="posts_per_page">Rigenera dipendenze</label></th>
+            <td>
+                <a href="<?php echo $generate_url; ?>"><button class="button">Rigenera</button> </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
     <form method="post">
         <table class="form-table">
             <tbody>
