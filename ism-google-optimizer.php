@@ -9,57 +9,10 @@ Author URI: #
 License: MIT
 */
 
-require_once __DIR__ . "/includes/ism-menu-page.php";
+require_once __DIR__ . "/src/autoload.php";
+require_once __DIR__ . "/includes/ism-menu-page-functions.php";
+require_once __DIR__ . "/includes/ism-enqueue-functions.php";
 
-add_action('wp_enqueue_scripts', function () {
-
-    global $wp_styles;
-
-    global $wp_scripts;
-
-    if (isset($_GET['_ism_google_optimizer_styles'])) {
-
-        $ismStyles = [];
-
-        $registeredStyles = $wp_styles->registered;
-
-        foreach ($registeredStyles as $handle => $style) {
-
-            $ismStyles[] = $handle;
-        }
-
-        update_option('_ism_google_optimizer_styles', $ismStyles);
-    }
-
-    $ismFooterStyles = get_option('_ism_google_optimizer_styles_footer');
-
-    if (!$ismFooterStyles) {
-
-        $ismFooterStyles = [];
-    }
-
-    foreach ($ismFooterStyles as $ismFooterStyle) {
-
-        wp_dequeue_style($ismFooterStyle);
-    }
-
-}, 99999);
-
-
-add_action('get_footer', function () {
-
-    $ismFooterStyles = get_option('_ism_google_optimizer_styles_footer');
-
-    if (!$ismFooterStyles) {
-
-        $ismFooterStyles = [];
-    }
-
-    foreach ($ismFooterStyles as $ismFooterStyle) {
-
-        wp_enqueue_style($ismFooterStyle);
-    }
-});
 
 if (!function_exists("ism_google_optimizer_get_template")) {
 
