@@ -7,16 +7,22 @@
             <tr>
                 <th scope="row"><label for="posts_per_page">Lista CSS</label></th>
                 <td>
-                    <select name="style">
+                    <table>
                         <?php foreach ($ism_styles as $ism_style) : ?>
-                            <option value="<?php echo $ism_style; ?>"><?php echo $ism_style; ?></option>
+                            <tr>
+                                <td><input type="checkbox" name="add_styles[]"
+                                           value="<?php echo $ism_style; ?>"></td>
+                                <td><?php echo $ism_style; ?></td>
+                            </tr>
                         <?php endforeach; ?>
-                    </select>
-                    <button class="button">Aggiungi al footer</button>
+                    </table>
                 </td>
             </tr>
             </tbody>
         </table>
+        <p>
+            <button type="submit" class="button button-primary">Aggiungi selezionati</button>
+        </p>
     </form>
     <?php if (count($ism_footer_styles)) : ?>
         <form method="post">

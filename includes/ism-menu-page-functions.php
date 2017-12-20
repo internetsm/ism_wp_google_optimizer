@@ -12,11 +12,11 @@ add_action('admin_menu', function () {
 
         $ismFooterStyles = OptionHelper::getFooterStyles();
 
-        $styleToAdd = isset($_POST['style']) ? $_POST['style'] : null;
+        $styleToAdd = isset($_POST['add_styles']) ? $_POST['add_styles'] : [];
 
-        if ($styleToAdd) {
+        foreach ($styleToAdd as $style) {
 
-            $ismFooterStyles[] = $styleToAdd;
+            $ismFooterStyles[] = $style;
 
             $ismFooterStyles = array_unique($ismFooterStyles);
 
