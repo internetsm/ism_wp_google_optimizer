@@ -1,5 +1,6 @@
 <div class="wrap">
     <h1>Ism Google Optimizer</h1>
+    <p>Se non vengono mostrati stili, aprire questa <a href="<?php echo $generate_url; ?>">url</a></p>
     <form method="post">
         <table class="form-table">
             <tbody>

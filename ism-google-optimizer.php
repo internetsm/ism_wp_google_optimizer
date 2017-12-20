@@ -10,8 +10,8 @@ License: MIT
 */
 
 require_once __DIR__ . "/src/autoload.php";
-require_once __DIR__ . "/includes/ism-menu-page-functions.php";
 require_once __DIR__ . "/includes/ism-enqueue-functions.php";
+require_once __DIR__ . "/includes/ism-menu-page-functions.php";
 
 
 if (!function_exists("ism_google_optimizer_get_template")) {

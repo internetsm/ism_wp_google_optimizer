@@ -21,6 +21,10 @@ add_action('wp_enqueue_scripts', function () {
         }
 
         OptionHelper::setEnqueuedStyles($ismStyles);
+
+        $adminUrl = admin_url('/admin.php?page=ism_google_optimizer');
+
+        wp_redirect($adminUrl);
     }
 
     $ismFooterStyles = OptionHelper::getFooterStyles();
